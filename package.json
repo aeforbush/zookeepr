@@ -20,5 +20,8 @@
   "homepage": "https://github.com/aeforbush/zookeepr#readme",
   "devDependencies": {
     "jest": "^27.2.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
