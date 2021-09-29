@@ -3,7 +3,7 @@ const path = require("path");
 const express = require("express");
 const { animals } = require("./data/animals.json");
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const app = express();
 
 // parse incoming string or array data
@@ -118,10 +118,10 @@ app.post("/api/animals", (req, res) => {
     res.json(animal);
   }
 });
-// get html and display to browser
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'));
-});
+// // get html and display to browser
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, './public/index.html'));
+// });
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
