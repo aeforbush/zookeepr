@@ -120,9 +120,21 @@ app.post("/api/animals", (req, res) => {
     res.json(animal);
   }
 });
-// get html and display to browser
+// get index html and open route to animals
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+// get animal html and open route to animals
+app.get('/animals', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/animals.html'));
+}) ;
+
+app.get('/zookeepers', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 app.listen(PORT, () => {
