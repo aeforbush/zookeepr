@@ -122,7 +122,7 @@ app.post("/api/animals", (req, res) => {
 });
 // get html and display to browser
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/zookeepr-public/index.html"));
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 app.listen(PORT, () => {
