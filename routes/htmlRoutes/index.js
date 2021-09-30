@@ -18,8 +18,6 @@ router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
   });
   
-  router.listen(PORT, () => {
-    console.log(`API server now on port ${PORT}!`);
-  });
+ 
 
   module.export = router;
