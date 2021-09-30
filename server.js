@@ -108,6 +108,7 @@ app.get("/api/animals/:id", (req, res) => {
   }
 });
 
+// enables html to submit and create new data
 app.post("/api/animals", (req, res) => {
   // set id based on what the next index of the array will be
   req.body.id = animals.length.toString();

@@ -31,8 +31,25 @@ const getAnimals = (formData = {}) => {
 
   console.log(queryUrl);
 
+  // making request for queryUrl(when using fetch check to see if the ok property is true or false)
+  fetch(queryUrl) 
+  .then(response => {
+    if (!response.ok) {
+      // should use modal or toast dialog box as best practice 
+      return alert('Error: ' + response.statusText);
+    }
+    // json method parses response into readable JSON format
+    return response.json();
+  })
+  .then(animalData => {
+    console.log(animalData);
+    // array of animal data is sent to printResults() function/generating cards for each animal
+    printResults(animalDta);
+  });
+
 };
 
+// gathers all form input data and package it as an object to send to getAnimals() as the formData argument
 const handleGetAnimalsSubmit = event => {
   event.preventDefault();
   const dietRadioHTML = $animalForm.querySelectorAll('[name="diet"]');
