@@ -1,9 +1,9 @@
 const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
-const fs = require("fs");
-const path = require("path");
+const htmlRoutes = require('./routes/htmlRoutes/html');
+// const fs = require("fs");
+// const path = require("path");
 const express = require("express");
-const { animals } = require("./data/animals.json");
+// const { animals } = require("./data/animals.json");
 
 const PORT = process.env.PORT || 3002;
 // app represents a signle instance of the Express.js server (variable that creates endpoints)
