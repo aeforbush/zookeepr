@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
-// middleware that makes certain files readily available
+// middleware that makes certain files are readily available
 app.use(express.static("public"));
 
 

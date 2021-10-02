@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { filteredByQuery, findById, createNewAnimal, validateAnimal } = require('../../lib/animals');
+const { filterByQuery, findById, createNewAnimal, validateAnimal } = require('../../lib/animals');
 const { animals } = require('../../data/animals');
 
 
 router.get("/animals/", (req, res) => {
   let results = animals;
   if (req.query) {
-    results = filteredByQuery(req.query, results);
+    results = filterByQuery(req.query, results);
   }
   res.json(results);
 });
