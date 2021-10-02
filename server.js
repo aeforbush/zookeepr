@@ -5,7 +5,7 @@ const htmlRoutes = require('./routes/htmlRoutes/html');
 const express = require("express");
 // const { animals } = require("./data/animals.json");
 
-const PORT = process.env.PORT || 3004;
+const PORT = process.env.PORT || 3005;
 // app represents a signle instance of the Express.js server (variable that creates endpoints)
 const app = express();
 
