@@ -1,5 +1,3 @@
-const { POINT_CONVERSION_COMPRESSED } = require("constants");
-
 const $animalForm = document.querySelector('#animal-form');
 
 const handleAnimalFormSubmit = event => {
