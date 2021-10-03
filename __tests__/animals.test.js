@@ -59,6 +59,7 @@ test("finds by id", () => {
   ];
 
   const result = findById("3", startingAnimals);
+  console.log(result);
 
   expect(result.name).toBe("Erica");
 });

@@ -24,7 +24,7 @@ const printResults = resultArr => {
 const getZookeepers = (formData = {}) => {
   let queryUrl = '/api/zookeepers?';
 
-  Object.enteries(formData).forEach(([key, value]) => {
+  Object.entries(formData).forEach(([key, value]) => {
     queryUrl += `${key}=${value}&`;
   });
 

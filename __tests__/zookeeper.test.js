@@ -6,8 +6,7 @@ const {
   validateZookeeper,
 } = require("../lib/zookeepers");
 const { zookeepers } = require("../data/zookeepers.json");
-const { TestWatcher } = require("@jest/core");
-const { hasUncaughtExceptionCaptureCallback } = require("process");
+
 
 jest.mock("fs");
 test("creates a zookeeper object", () => {
@@ -16,8 +15,8 @@ test("creates a zookeeper object", () => {
     zookeepers
   );
 
-  hasUncaughtExceptionCaptureCallback(zookeeper.name).toBe("Darlene");
-  hasUncaughtExceptionCaptureCallback(zookeeper.id).toBe("jhgdja3ng2");
+  expect(zookeeper.name).toBe("Darlene");
+  expect(zookeeper.id).toBe("jhgdja3ng2");
 });
 
 test("filters by query", () => {
@@ -38,7 +37,7 @@ test("filters by query", () => {
 
   const updatedZookeepers = filterByQuery({ age: 31 }, startingZookeepers);
 
-  hasUncaughtExceptionCaptureCallback(updatedZookeepers.length).toEqual(1);
+  expect(updatedZookeepers.length).toEqual(1);
 });
 
 test("finds by id", () => {
@@ -66,13 +65,13 @@ test("validates age", () => {
   const zookeeper = {
     id: "2",
     name: "Raksha",
-    age: 31,
+    age: "31",
     favoriteAnimal: "penguin",
   };
 
   const invalidZookeeper = {
     id: "3",
-    name: "Isabella",
+    name: 52,
     age: "67",
     favoriteAnimal: "bear",
   };
